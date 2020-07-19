@@ -74,4 +74,8 @@ export default createGlobalStyle`
       }
     }
   }
+  .input-group {
+    display: flex;
+    justify-content: space-between;
+  }
 `;
