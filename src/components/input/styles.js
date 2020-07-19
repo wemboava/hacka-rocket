@@ -11,6 +11,9 @@ export const Content = styled.div`
   label {
     margin-bottom: 3px;
     font-size: 0.8em;
+    & > span {
+      color: red;
+    }
   }
   input {
     background-color: #f2f2f2;

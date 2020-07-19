@@ -26,7 +26,26 @@ export const Content = styled.div`
     padding: 20px 0;
   }
   form {
-    margin: 20px 0;
+    margin: 20px 0 70px 0;
+  }
+
+  .send-invoice {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    border: none;
+    background: #ff6900;
+    box-shadow: 0px 0px 15px rgba(248, 128, 101, 0.17);
+    border-radius: 20px 20px 0px 0px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
   }
 `;
 

@@ -24,6 +24,11 @@ const Cart = () => {
     setAdress({ ...address, [event.target.name]: event.target.value });
   };
 
+  const sendInvoice = () => {
+    window.location.href =
+      "https://api.whatsapp.com/send?phone=5511964032829&text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20pedido.%20Os%20itens%20escolhidos%20s%C3%A3o%3A%20%20%0A%20%20%0A%20Nome%3A%20WILLIAN%20EMBOAVA%20DE%20OLIVEIRA%20%0A%20%20%0A%20%20Telefone%3A%2011964032829%20%0A%20%20%0A%20%20%0A%20%20%0A%20Endere%C3%A7o%20para%20entrega%3A%20%0A%20Rua%20Afonso%20C%C3%A2ndido%20Lopes%2C%2023434%2C%20Bairro%3A%20Piracaia%2C%20Cidade%3A%20Piracaia%20%0A%20%20%0A%20%20Ponto%20de%20referencia%3A%20sadasd%20%0A%20%20%0A%20https://viitrine.netlify.app/";
+  };
+
   return (
     <Container>
       <Content>
@@ -99,18 +104,20 @@ const Cart = () => {
           </Table>
         </div>
         <h4>Informações para entrega</h4>
-        <form>
+        <form onSubmit={sendInvoice}>
           <Input
             hangleChange={handleAddress}
             label="Nome"
             name="name"
             value={address.name}
+            required
           />
           <Input
             hangleChange={handleAddress}
             label="WhatsApp"
             name="whatsapp"
             value={address.whatsapp}
+            required
           />
 
           <div className="input-group">
@@ -120,6 +127,7 @@ const Cart = () => {
               isGroup
               name="address"
               value={address.address}
+              required
             />
             <Input
               hangleChange={handleAddress}
@@ -127,6 +135,7 @@ const Cart = () => {
               isGroup
               name="number"
               value={address.number}
+              required
             />
           </div>
           <div className="input-group">
@@ -136,6 +145,7 @@ const Cart = () => {
               isGroup
               name="neighborhood"
               value={address.neighborhood}
+              required
             />
             <Input
               hangleChange={handleAddress}
@@ -143,6 +153,7 @@ const Cart = () => {
               isGroup
               name="city"
               value={address.city}
+              required
             />
           </div>
           <Input
@@ -152,6 +163,10 @@ const Cart = () => {
             value={address.reference}
           />
         </form>
+
+        <button onClick={sendInvoice} className="send-invoice" type="button">
+          Enviar pedido por WhatsApp
+        </button>
       </Content>
     </Container>
   );

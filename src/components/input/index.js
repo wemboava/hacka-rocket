@@ -9,12 +9,17 @@ const Input = ({
   type = "text",
   placeholder,
   isGroup,
+  required,
 }) => {
   return (
     <Container isGroup={isGroup}>
       <Content>
-        <label>{label}</label>
+        <label>
+          {label}
+          {required && <span>*</span>}
+        </label>
         <input
+          required={required}
           value={value}
           name={name}
           type={type}

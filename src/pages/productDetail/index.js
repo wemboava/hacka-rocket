@@ -62,7 +62,11 @@ const ProductDetail = () => {
             </p>
           </div>
         </Detail>
-        <button className="add-to-cart" type="button">
+        <button
+          onClick={() => history.push("/cart")}
+          className="add-to-cart"
+          type="button"
+        >
           Adicionar no carrinho
         </button>
       </Content>
