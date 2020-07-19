@@ -11,13 +11,13 @@ export const List = styled.ul`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  & a {
+  /* & a {
     width: 47%;
-  }
+  } */
 `;
 
 export const Item = styled.li`
-  width: 100%;
+  width: 47%;
   margin-bottom: 20px;
   .image {
     width: 100%;
