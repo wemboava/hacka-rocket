@@ -11,11 +11,14 @@ export const List = styled.ul`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  & a {
+    width: 47%;
+  }
 `;
 
 export const Item = styled.li`
-  width: 47%;
-  margin-top: 20px;
+  width: 100%;
+  margin-bottom: 20px;
   .image {
     width: 100%;
     height: 220px;
@@ -33,6 +36,7 @@ export const Item = styled.li`
     display: flex;
     flex-direction: column;
     margin-top: 7px;
+    color: #5c5c5c;
     &__price {
       font-weight: 600;
     }
