@@ -13,6 +13,7 @@
     "react-reveal": "^1.2.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "sns-react-siema": "^1.0.4",
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
