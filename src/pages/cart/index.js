@@ -14,7 +14,7 @@ const Cart = () => {
     name: "",
     whatsapp: "",
     street: "",
-    number: 0,
+    number: "",
     neighborhood: "",
     city: "",
     reference: "",
