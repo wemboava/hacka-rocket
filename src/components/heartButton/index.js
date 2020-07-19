@@ -1,11 +1,11 @@
 import React from "react";
 import { Container, Button } from "./styles";
 
-const HeartButton = () => {
+const HeartButton = ({ handleClick, isFavorite }) => {
   return (
     <Container>
-      <Button onClick={() => {}}>
-        <input type="checkbox" className="toggle" />
+      <Button onClick={handleClick}>
+        <input defaultChecked={isFavorite} type="checkbox" className="toggle" />
         <div className="heart" />
       </Button>
     </Container>

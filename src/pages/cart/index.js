@@ -63,17 +63,6 @@ const Cart = () => {
               <SelectQuantity />
             </div>
           </Item>
-          <Item>
-            <img className="image" src={Roupa} alt="roupa" />
-            <div className="info">
-              <h4>Nome do Produto</h4>
-              <div className="info__price">
-                <strong>R$ 129,90</strong>
-                <span> por unidade</span>
-              </div>
-              <SelectQuantity />
-            </div>
-          </Item>
         </CartItems>
         <div className="values">
           <Table>
@@ -87,18 +76,13 @@ const Cart = () => {
             <tbody>
               <tr>
                 <td>Produto</td>
-                <td>2</td>
-                <td>R$ 129,90</td>
-              </tr>
-              <tr>
-                <td>Produto</td>
-                <td>2</td>
-                <td>R$ 129,90</td>
+                <td>1</td>
+                <td>R$ 35,00</td>
               </tr>
               <tr className="total">
                 <td className="total__label">Total</td>
                 <td />
-                <td>R$ 129,90</td>
+                <td>R$ 35,00</td>
               </tr>
             </tbody>
           </Table>

@@ -8,6 +8,13 @@ import Img from "../../assets/images/roupa.jpg";
 
 const ProductDetail = () => {
   const history = useHistory();
+  const product = {
+    id: 9,
+    name: "Bolo tradicional",
+    description: "1kg rende 20 porções.  Entrega sob encomenda (2 a 3 dias)",
+    price: 35,
+    category: "Bolos",
+  };
   return (
     <Container>
       <Content image={Img}>
@@ -46,20 +53,19 @@ const ProductDetail = () => {
         <Detail>
           <div className="row-one">
             <div className="row-one__price">
-              <span className="row-one__price__value">R$ 129,90 </span>
+              <span className="row-one__price__value">
+                R$ {product.price},00{" "}
+              </span>
               <span className="row-one__price__label"> por unidade</span>
             </div>
             <HeartButton />
           </div>
           <div className="row-two">
-            <h2>Conjunto cropped, shorts jeans e kimono</h2>
+            <h2>{product.name}</h2>
             <Ratings onlyReading rate={4} starSize="18px" reviews={18} />
           </div>
           <div className="row-three">
-            <p>
-              Lindissímo conjunto neque porro quisquam est qui dolorem ipsum
-              quia dolor sit amet, consectetur, adipisci velit.
-            </p>
+            <p>{product.description}</p>
           </div>
         </Detail>
         <button

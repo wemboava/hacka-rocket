@@ -51,7 +51,8 @@ export const Content = styled.div`
 
 export const Detail = styled.div`
   width: 100%;
-  height: 600px;
+  height: auto;
+  min-height: 400px;
   background-color: #fff;
   border-radius: 30px 30px 0 0;
   margin-top: -25px;

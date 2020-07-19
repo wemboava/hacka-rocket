@@ -1,12 +1,19 @@
 import React from "react";
-import { Container, Content } from "./styles";
+import { useHistory, useRouteMatch } from "react-router-dom";
+import { Container, Content, Option } from "./styles";
 
 const HeaderBottom = () => {
+  const history = useHistory();
+  const router = useRouteMatch();
+
   return (
     <Container>
       <Content>
         <ul>
-          <li>
+          <Option
+            isActivity={router.url === "/favorites"}
+            onClick={() => history.push("/favorites")}
+          >
             <svg
               width="29"
               height="27"
@@ -17,7 +24,7 @@ const HeaderBottom = () => {
               <g clipPath="url(#clip0)">
                 <path
                   d="M20.8963 0C18.1479 0 15.6645 1.41049 14.5094 3.60753C13.3531 1.41049 10.8391 0 8.09073 0C3.79631 0 -1.96295 3.39071 0.65939 12.6425C3.65618 21.6833 14.5082 27.0023 14.5082 27C14.5082 27.0023 25.345 21.6867 28.3417 12.6425C30.9641 3.39071 25.1895 0 20.8963 0Z"
-                  fill="#CECECE"
+                  fill={router.url === "/favorites" ? "#FF6900" : "#CECECE"}
                 />
               </g>
               <defs>
@@ -26,8 +33,11 @@ const HeaderBottom = () => {
                 </clipPath>
               </defs>
             </svg>
-          </li>
-          <li>
+          </Option>
+          <Option
+            onClick={() => history.push("/")}
+            isActivity={router.url === "/"}
+          >
             <svg
               width="30"
               height="27"
@@ -37,11 +47,11 @@ const HeaderBottom = () => {
             >
               <path
                 d="M28.3333 0H1.66667V3.375H28.3333V0ZM30 16.875V13.5L28.3333 5.0625H1.66667L0 13.5V16.875H1.66667V27H18.3333V16.875H25V27H28.3333V16.875H30ZM15 23.625H5V16.875H15V23.625Z"
-                fill="#FF6900"
+                fill={router.url === "/" ? "#FF6900" : "#CECECE"}
               />
             </svg>
-          </li>
-          <li>
+          </Option>
+          <Option onClick={() => history.push("/cart")}>
             <svg
               width="30"
               height="30"
@@ -54,7 +64,7 @@ const HeaderBottom = () => {
                 fill="#CECECE"
               />
             </svg>
-          </li>
+          </Option>
         </ul>
       </Content>
     </Container>

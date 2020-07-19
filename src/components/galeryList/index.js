@@ -7,220 +7,69 @@ import { Container, Content, List, Item } from "./styles";
 
 import Img from "../../assets/images/roupa.jpg";
 
-const GaleryList = () => {
+const GaleryList = ({
+  products,
+  favoriteProductsInLocalStore,
+  saveFavorite,
+}) => {
   const history = useHistory();
 
-  const handleFavorite = (e) => {
+  const handleFavorite = (e, product) => {
     e.stopPropagation();
+
+    const alreadyExists = favoriteProductsInLocalStore.find(
+      (item) => item.id === product.id
+    );
+
+    let newFavoriteProducts = [];
+
+    if (alreadyExists) {
+      newFavoriteProducts = favoriteProductsInLocalStore.filter(
+        (item) => item.id !== alreadyExists.id
+      );
+    } else {
+      newFavoriteProducts = [
+        ...favoriteProductsInLocalStore,
+        { ...product, isFavorite: true },
+      ];
+    }
+    saveFavorite(newFavoriteProducts);
+    localStorage.setItem(
+      "@vitrine/favorites",
+      JSON.stringify(newFavoriteProducts)
+    );
   };
 
   return (
     <Container>
       <Content>
         <List>
-          <Item onClick={() => history.push("/detail")} img={Img}>
-            <Zoom>
-              <div className="image">
-                <div
-                  onClick={(e) => e.stopPropagation()}
-                  className="image__heart"
-                >
-                  <HeartButton />
+          {products.map((product) => (
+            <Item
+              onClick={() => history.push(`/detalhe/${product.id}`)}
+              img={Img}
+            >
+              <Zoom>
+                <div className="image">
+                  <div
+                    onClick={(e) => e.stopPropagation()}
+                    className="image__heart"
+                  >
+                    <HeartButton
+                      isFavorite={product.isFavorite}
+                      handleClick={(e) => handleFavorite(e, product)}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="description">
-                <span className="description__name">Nome do produto</span>
-                <span className="description__price">R$ 129,90</span>
-              </div>
-            </Zoom>
-          </Item>
-
-          <Item onClick={() => history.push("/detail")} img={Img}>
-            <Zoom>
-              <div className="image">
-                <div
-                  onClick={(e) => e.stopPropagation()}
-                  className="image__heart"
-                >
-                  <HeartButton />
+                <div className="description">
+                  <span className="description__name">{product.name}</span>
+                  <span className="description__price">
+                    R$ {product.price},00
+                  </span>
                 </div>
-              </div>
-              <div className="description">
-                <span className="description__name">Nome do produto</span>
-                <span className="description__price">R$ 129,90</span>
-              </div>
-            </Zoom>
-          </Item>
-
-          <Item onClick={() => history.push("/detail")} img={Img}>
-            <Zoom>
-              <div className="image">
-                <div
-                  onClick={(e) => e.stopPropagation()}
-                  className="image__heart"
-                >
-                  <HeartButton />
-                </div>
-              </div>
-              <div className="description">
-                <span className="description__name">Nome do produto</span>
-                <span className="description__price">R$ 129,90</span>
-              </div>
-            </Zoom>
-          </Item>
-
-          <Item onClick={() => history.push("/detail")} img={Img}>
-            <Zoom>
-              <div className="image">
-                <div
-                  onClick={(e) => e.stopPropagation()}
-                  className="image__heart"
-                >
-                  <HeartButton />
-                </div>
-              </div>
-              <div className="description">
-                <span className="description__name">Nome do produto</span>
-                <span className="description__price">R$ 129,90</span>
-              </div>
-            </Zoom>
-          </Item>
-
-          <Item onClick={() => history.push("/detail")} img={Img}>
-            <Zoom>
-              <div className="image">
-                <div
-                  onClick={(e) => e.stopPropagation()}
-                  className="image__heart"
-                >
-                  <HeartButton />
-                </div>
-              </div>
-              <div className="description">
-                <span className="description__name">Nome do produto</span>
-                <span className="description__price">R$ 129,90</span>
-              </div>
-            </Zoom>
-          </Item>
-
-          <Item onClick={() => history.push("/detail")} img={Img}>
-            <Zoom>
-              <div className="image">
-                <div
-                  onClick={(e) => e.stopPropagation()}
-                  className="image__heart"
-                >
-                  <HeartButton />
-                </div>
-              </div>
-              <div className="description">
-                <span className="description__name">Nome do produto</span>
-                <span className="description__price">R$ 129,90</span>
-              </div>
-            </Zoom>
-          </Item>
-
-          <Item onClick={() => history.push("/detail")} img={Img}>
-            <Zoom>
-              <div className="image">
-                <div
-                  onClick={(e) => e.stopPropagation()}
-                  className="image__heart"
-                >
-                  <HeartButton />
-                </div>
-              </div>
-              <div className="description">
-                <span className="description__name">Nome do produto</span>
-                <span className="description__price">R$ 129,90</span>
-              </div>
-            </Zoom>
-          </Item>
-
-          <Item onClick={() => history.push("/detail")} img={Img}>
-            <Zoom>
-              <div className="image">
-                <div
-                  onClick={(e) => e.stopPropagation()}
-                  className="image__heart"
-                >
-                  <HeartButton />
-                </div>
-              </div>
-              <div className="description">
-                <span className="description__name">Nome do produto</span>
-                <span className="description__price">R$ 129,90</span>
-              </div>
-            </Zoom>
-          </Item>
-
-          <Item onClick={() => history.push("/detail")} img={Img}>
-            <Zoom>
-              <div className="image">
-                <div
-                  onClick={(e) => e.stopPropagation()}
-                  className="image__heart"
-                >
-                  <HeartButton />
-                </div>
-              </div>
-              <div className="description">
-                <span className="description__name">Nome do produto</span>
-                <span className="description__price">R$ 129,90</span>
-              </div>
-            </Zoom>
-          </Item>
-
-          <Item onClick={() => history.push("/detail")} img={Img}>
-            <Zoom>
-              <div className="image">
-                <div
-                  onClick={(e) => e.stopPropagation()}
-                  className="image__heart"
-                >
-                  <HeartButton />
-                </div>
-              </div>
-              <div className="description">
-                <span className="description__name">Nome do produto</span>
-                <span className="description__price">R$ 129,90</span>
-              </div>
-            </Zoom>
-          </Item>
-
-          <Item onClick={() => history.push("/detail")} img={Img}>
-            <Zoom>
-              <div className="image">
-                <div
-                  onClick={(e) => e.stopPropagation()}
-                  className="image__heart"
-                >
-                  <HeartButton />
-                </div>
-              </div>
-              <div className="description">
-                <span className="description__name">Nome do produto</span>
-                <span className="description__price">R$ 129,90</span>
-              </div>
-            </Zoom>
-          </Item>
-
-          <Item onClick={() => history.push("/detail")} img={Img}>
-            <Zoom>
-              <div className="image">
-                <div
-                  onClick={(e) => e.stopPropagation()}
-                  className="image__heart"
-                >
-                  <HeartButton />
-                </div>
-              </div>
-              <div className="description">
-                <span className="description__name">Nome do produto</span>
-                <span className="description__price">R$ 129,90</span>
-              </div>
-            </Zoom>
-          </Item>
+              </Zoom>
+            </Item>
+          ))}
         </List>
       </Content>
     </Container>

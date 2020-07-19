@@ -23,7 +23,9 @@ function Main() {
   return (
     <BrowserRouter>
       <GlobalStyles />
-      {token ? <Routes /> : <AuthRoutes />}
+      <Routes />
+      {/* <AuthRoutes /> */}
+      {/* {token ? <Routes /> : <AuthRoutes />} */}
     </BrowserRouter>
   );
 }
