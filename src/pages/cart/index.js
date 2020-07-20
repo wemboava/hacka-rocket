@@ -6,7 +6,7 @@ import SelectQuantity from "../../components/selectQuantity";
 import Input from "../../components/input";
 
 import Logo from "../../assets/images/logo.png";
-import Roupa from "../../assets/images/roupa.jpg";
+import Roupa from "../../assets/images/1.jpeg";
 
 const Cart = () => {
   const history = useHistory();

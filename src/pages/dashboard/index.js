@@ -59,7 +59,7 @@ const Dashboard = () => {
         : [
             {
               id: 1,
-              name: "Bolo tradicional",
+              name: "Bolo de Fubá",
               description:
                 "1kg rende 20 porções.  Entrega sob encomenda (2 a 3 dias)",
               price: 35,
@@ -75,7 +75,7 @@ const Dashboard = () => {
             },
             {
               id: 3,
-              name: "Bolo tradicional",
+              name: "Bolo três cores",
               description:
                 "1kg rende 20 porções.  Entrega sob encomenda (2 a 3 dias)",
               price: 35,
@@ -83,7 +83,7 @@ const Dashboard = () => {
             },
             {
               id: 4,
-              name: "Bolo tradicional",
+              name: "Bolo vitrine",
               description:
                 "1kg rende 20 porções.  Entrega sob encomenda (2 a 3 dias)",
               price: 35,
@@ -91,7 +91,7 @@ const Dashboard = () => {
             },
             {
               id: 5,
-              name: "Bolo tradicional",
+              name: "Torta de limão",
               description:
                 "1kg rende 20 porções.  Entrega sob encomenda (2 a 3 dias)",
               price: 35,
@@ -99,7 +99,7 @@ const Dashboard = () => {
             },
             {
               id: 6,
-              name: "Bolo tradicional",
+              name: "Bolo de amora",
               description:
                 "1kg rende 20 porções.  Entrega sob encomenda (2 a 3 dias)",
               price: 35,
@@ -107,7 +107,7 @@ const Dashboard = () => {
             },
             {
               id: 7,
-              name: "Bolo tradicional",
+              name: "Red velvet",
               description:
                 "1kg rende 20 porções.  Entrega sob encomenda (2 a 3 dias)",
               price: 35,
@@ -115,7 +115,7 @@ const Dashboard = () => {
             },
             {
               id: 8,
-              name: "Bolo tradicional",
+              name: "Cupcake da vitória",
               description:
                 "1kg rende 20 porções.  Entrega sob encomenda (2 a 3 dias)",
               price: 35,
@@ -123,7 +123,7 @@ const Dashboard = () => {
             },
             {
               id: 9,
-              name: "Bolo tradicional",
+              name: "Cupcake mecontrata",
               description:
                 "1kg rende 20 porções.  Entrega sob encomenda (2 a 3 dias)",
               price: 35,
@@ -131,15 +131,23 @@ const Dashboard = () => {
             },
             {
               id: 10,
-              name: "Bolo tradicional",
+              name: "Bolo chocolate",
               description:
                 "1kg rende 20 porções.  Entrega sob encomenda (2 a 3 dias)",
               price: 35,
               category: "Bolos",
             },
             {
-              id: 1,
-              name: "Bolo tradicional",
+              id: 11,
+              name: "Rosquinha",
+              description:
+                "1kg rende 20 porções.  Entrega sob encomenda (2 a 3 dias)",
+              price: 35,
+              category: "Bolos",
+            },
+            {
+              id: 12,
+              name: "Chococake",
               description:
                 "1kg rende 20 porções.  Entrega sob encomenda (2 a 3 dias)",
               price: 35,

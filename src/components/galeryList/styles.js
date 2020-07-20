@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   padding-bottom: 70px;
@@ -22,7 +22,8 @@ export const Item = styled.li`
   .image {
     width: 100%;
     height: 220px;
-    background-image: url(${(props) => props.img});
+    background-image: url(${(props) =>
+      require(`../../assets/images/${props.img}.jpeg`)});
     background-size: cover;
     border-radius: 8px;
     position: relative;

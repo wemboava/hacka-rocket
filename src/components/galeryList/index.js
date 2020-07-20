@@ -5,8 +5,6 @@ import { useHistory } from "react-router-dom";
 import HeartButton from "../heartButton";
 import { Container, Content, List, Item } from "./styles";
 
-import Img from "../../assets/images/roupa.jpg";
-
 const GaleryList = ({
   products,
   favoriteProductsInLocalStore,
@@ -47,7 +45,7 @@ const GaleryList = ({
           {products.map((product) => (
             <Item
               onClick={() => history.push(`/detalhe/${product.id}`)}
-              img={Img}
+              img={product.id}
             >
               <Zoom>
                 <div className="image">

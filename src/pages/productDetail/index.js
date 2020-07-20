@@ -5,7 +5,7 @@ import HeartButton from "../../components/heartButton";
 import Ratings from "../../components/starRatings";
 import { Container, Content, Detail } from "./styles";
 
-import Img from "../../assets/images/roupa.jpg";
+import Img from "../../assets/images/1.jpeg";
 
 const ProductDetail = () => {
   const history = useHistory();
